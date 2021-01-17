@@ -16,7 +16,6 @@ function App() {
       .get("/gallery")
       .then((response) => {
         setGalleryList(response.data);
-        console.log(response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -24,7 +23,6 @@ function App() {
   };
 
   const likeClick =(event)=> {
-    console.log('Like clicked');
     event.preventDefault();
     let like = event.target.id
     console.log('Liking image:', like);
