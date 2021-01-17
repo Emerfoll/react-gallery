@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function GalleryItem({ item }) {
+function GalleryItem({ item, likeClick }) {
     const [description, setDescription] = useState(false);
 
     return(
@@ -10,9 +10,13 @@ function GalleryItem({ item }) {
                 {item.description}
             </p>
         ) : (
-            <img src={item.path} width={'250rem'} />
+            <img src={item.path} onClick={()=> setDescription(true)} width={'250rem'} />
         )}
-        
+            <>
+            
+            <button id={item.id} onClick={likeClick}>Like</button>
+            <p>{item.likes}</p>
+            </>
         </>
 
 
